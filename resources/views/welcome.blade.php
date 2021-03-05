@@ -14,23 +14,23 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
 
-    <body>
+    <body class="bg_image">
         <div class="login_card card">
             <div class="card-header">
                 Laravel - Ricette
             </div>
             <div class="card-body">
                 @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="btn btn-outline-primary d-block">Login</a>
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary d-block">Accedi</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-outline-primary d-block mt-2">Register</a>
-                    @endif
-                @endauth
-            @endif
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-outline-primary d-block mt-2">Registrati</a>
+                        @endif
+                    @endauth
+                @endif
             </div>
         </div>
     </body>
